@@ -4,9 +4,10 @@ enum TransactionType {
   TRANSFER = "TRANSFER",
 }
 
-enum RecurringInterval {
+export enum RecurringInterval {
   DAILY = "DAILY",
   WEEKLY = "WEEKLY",
+  FORTNIGHTLY = "FORTNIGHTLY",
   MONTHLY = "MONTHLY",
   YEARLY = "YEARLY",
 }

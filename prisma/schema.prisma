@@ -34,6 +34,7 @@ enum TransactionStatus {
 enum RecurringInterval {
   DAILY
   WEEKLY
+  FORTNIGHTLY
   MONTHLY
   YEARLY
 }
