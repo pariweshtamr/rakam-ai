@@ -4,6 +4,11 @@ enum TransactionType {
   TRANSFER = "TRANSFER",
 }
 
+export enum CategoryType {
+  INCOME = "INCOME",
+  EXPENSE = "EXPENSE",
+}
+
 export enum RecurringInterval {
   DAILY = "DAILY",
   WEEKLY = "WEEKLY",
@@ -85,4 +90,28 @@ export interface Transaction {
   // Relations (optional - include if you need populated data)
   user?: User
   account?: Account
+}
+
+export interface EmailData {
+  percentageUsed?: number
+  budgetAmount?: number
+  totalExpenses?: number
+  accountName?: string
+  stats?: {
+    totalIncome: number
+    totalExpenses: number
+    net: number
+    byCategory: any
+  }
+  month?: string
+  insights?: any
+}
+
+export interface Category {
+  id: string
+  name: string
+  color: string
+  type: string
+  icon: string
+  subcategories?: string[]
 }

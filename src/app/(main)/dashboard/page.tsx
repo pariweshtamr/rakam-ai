@@ -15,7 +15,7 @@ const DashboardPage = async () => {
     budgetData = await getCurrentBudget(defaultAccount.id)
   }
   return (
-    <div className="">
+    <div className="space-y-8">
       {/* Budget Progress */}
       {defaultAccount && (
         <BudgetProgress
