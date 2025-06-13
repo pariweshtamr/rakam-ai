@@ -179,7 +179,9 @@ export const AddTransactionForm = ({
         </Select>
 
         {errors.type && (
-          <p className="text-sm text-red-500">{errors.type.message}</p>
+          <p className="text-sm text-red-500">
+            {errors.type.message?.toString()}
+          </p>
         )}
       </div>
 
@@ -194,7 +196,9 @@ export const AddTransactionForm = ({
           />
 
           {errors.amount && (
-            <p className="text-sm text-red-500">{errors.amount.message}</p>
+            <p className="text-sm text-red-500">
+              {errors.amount.message?.toString()}
+            </p>
           )}
         </div>
 
@@ -227,7 +231,9 @@ export const AddTransactionForm = ({
           </Select>
 
           {errors.accountId && (
-            <p className="text-sm text-red-500">{errors.accountId.message}</p>
+            <p className="text-sm text-red-500">
+              {errors.accountId.message?.toString()}
+            </p>
           )}
         </div>
       </div>
@@ -251,7 +257,9 @@ export const AddTransactionForm = ({
         </Select>
 
         {errors.category && (
-          <p className="text-sm text-red-500">{errors.category.message}</p>
+          <p className="text-sm text-red-500">
+            {errors.category.message?.toString()}
+          </p>
         )}
       </div>
 
@@ -282,7 +290,9 @@ export const AddTransactionForm = ({
         </Popover>
 
         {errors.date && (
-          <p className="text-sm text-red-500">{errors.date.message}</p>
+          <p className="text-sm text-red-500">
+            {errors.date.message?.toString()}
+          </p>
         )}
       </div>
 
@@ -290,7 +300,9 @@ export const AddTransactionForm = ({
         <label className="text-sm font-medium">Description</label>
         <Input placeholder="Wnter description" {...register("description")} />
         {errors.description && (
-          <p className="text-sm text-red-500">{errors.description.message}</p>
+          <p className="text-sm text-red-500">
+            {errors.description.message?.toString()}
+          </p>
         )}
       </div>
 
