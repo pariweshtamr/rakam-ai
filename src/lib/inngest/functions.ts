@@ -365,7 +365,8 @@ const generateFinancialInsights = async (stats: any, month: string) => {
     const result = await model.generateContent([prompt])
     const response = await result.response
     const text = response.text()
-    const cleanedText = text.replace(/```(?:json)?\n?/g, "").trim()
+    // const cleanedText = text.replace(/```(?:json)?\n?/g, "").trim()
+    const cleanedText = text.replace(/```(?:json)?\s*|\s*```/g, "").trim()
 
     return JSON.parse(cleanedText)
   } catch (error) {
