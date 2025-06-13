@@ -16,76 +16,80 @@ const EmailTemplate = ({
   data = {} as EmailData,
 }) => {
   if (type === "monthly-report") {
-    ;<Html>
-      <Head />
-      <Preview>Your Monthly Financial Report</Preview>
-      <Body style={styles.body}>
-        <Container style={styles.container}>
-          <Heading style={styles.title}>Monthly Financial Report</Heading>
+    return (
+      <Html>
+        <Head />
+        <Preview>Your Monthly Financial Report</Preview>
+        <Body style={styles.body}>
+          <Container style={styles.container}>
+            <Heading style={styles.title}>Monthly Financial Report</Heading>
 
-          <Text style={styles.text}>Hello {username},</Text>
-          <Text style={styles.text}>
-            Here&rsquo;s your financial summary for {data?.month}:
-          </Text>
+            <Text style={styles.text}>Hello {username},</Text>
+            <Text style={styles.text}>
+              Here&rsquo;s your financial summary for {data?.month}:
+            </Text>
 
-          {/* Main Stats */}
-          <Section style={styles.statsContainer}>
-            {data.stats && (
-              <>
-                <div style={styles.stat}>
-                  <Text style={styles.text}>Total Income</Text>
-                  <Text style={styles.heading}>${data.stats.totalIncome}</Text>
-                </div>
-                <div style={styles.stat}>
-                  <Text style={styles.text}>Total Expenses</Text>
-                  <Text style={styles.heading}>
-                    ${data.stats.totalExpenses}
-                  </Text>
-                </div>
-                <div style={styles.stat}>
-                  <Text style={styles.text}>Net</Text>
-                  <Text style={styles.heading}>
-                    ${data.stats.totalIncome - data?.stats.totalExpenses}
-                  </Text>
-                </div>
-              </>
-            )}
-          </Section>
-
-          {/* Category Breakdown */}
-          {data?.stats?.byCategory && (
-            <Section style={styles.section}>
-              <Heading style={styles.heading}>Expenses by Category</Heading>
-              {Object.entries(data?.stats.byCategory).map(
-                ([category, amount]) => (
-                  <div key={category} style={styles.row}>
-                    <Text style={styles.text}>{category}</Text>
-                    <Text style={styles.text}>${amount as number}</Text>
+            {/* Main Stats */}
+            <Section style={styles.statsContainer}>
+              {data.stats && (
+                <>
+                  <div style={styles.stat}>
+                    <Text style={styles.text}>Total Income</Text>
+                    <Text style={styles.heading}>
+                      ${data.stats.totalIncome}
+                    </Text>
                   </div>
-                )
+                  <div style={styles.stat}>
+                    <Text style={styles.text}>Total Expenses</Text>
+                    <Text style={styles.heading}>
+                      ${data.stats.totalExpenses}
+                    </Text>
+                  </div>
+                  <div style={styles.stat}>
+                    <Text style={styles.text}>Net</Text>
+                    <Text style={styles.heading}>
+                      ${data.stats.totalIncome - data?.stats.totalExpenses}
+                    </Text>
+                  </div>
+                </>
               )}
             </Section>
-          )}
 
-          {/* AI Insights */}
-          {data?.insights && (
-            <Section style={styles.section}>
-              <Heading style={styles.heading}>Welth Insights</Heading>
-              {data.insights.map((insight: string, index: number) => (
-                <Text key={index} style={styles.text}>
-                  • {insight}
-                </Text>
-              ))}
-            </Section>
-          )}
+            {/* Category Breakdown */}
+            {data?.stats?.byCategory && (
+              <Section style={styles.section}>
+                <Heading style={styles.heading}>Expenses by Category</Heading>
+                {Object.entries(data?.stats.byCategory).map(
+                  ([category, amount]) => (
+                    <div key={category} style={styles.row}>
+                      <Text style={styles.text}>{category}</Text>
+                      <Text style={styles.text}>${amount as number}</Text>
+                    </div>
+                  )
+                )}
+              </Section>
+            )}
 
-          <Text style={styles.footer}>
-            Thank you for using Welth. Keep tracking your finances for better
-            financial health!
-          </Text>
-        </Container>
-      </Body>
-    </Html>
+            {/* AI Insights */}
+            {data?.insights && (
+              <Section style={styles.section}>
+                <Heading style={styles.heading}>Rakam Insights</Heading>
+                {data.insights.map((insight: string, index: number) => (
+                  <Text key={index} style={styles.text}>
+                    • {insight}
+                  </Text>
+                ))}
+              </Section>
+            )}
+
+            <Text style={styles.footer}>
+              Thank you for using Rakam AI. Keep tracking your finances for
+              better financial health!
+            </Text>
+          </Container>
+        </Body>
+      </Html>
+    )
   }
 
   if (type === "budget-alert") {

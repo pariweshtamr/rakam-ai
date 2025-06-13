@@ -102,3 +102,35 @@ export async function getUserAccounts() {
   const serializedAccounts = accounts.map(serializeTransaction)
   return serializedAccounts
 }
+
+export async function getDashboardData() {
+  try {
+    const { userId } = await auth()
+    if (!userId) throw new Error("Unauthorized")
+
+    const user = await db.user.findUnique({
+      where: {
+        clerkUserId: userId,
+      },
+    })
+
+    if (!user) {
+      throw new Error("User not found")
+    }
+
+    // get all user transactions
+    const transacions = await db.transaction.findMany({
+      where: {
+        userId: user.id,
+      },
+      orderBy: {
+        date: "desc",
+      },
+    })
+    return transacions.map(serializeTransaction)
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(error.message)
+    }
+  }
+}

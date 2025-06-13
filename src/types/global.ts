@@ -100,7 +100,7 @@ export interface EmailData {
   stats?: {
     totalIncome: number
     totalExpenses: number
-    net: number
+    net?: number
     byCategory: any
   }
   month?: string
