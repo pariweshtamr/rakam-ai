@@ -27,6 +27,7 @@ import { Switch } from "@/components/ui/switch"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { toast } from "sonner"
+import { ReceiptScanner } from "./receipt-scanner"
 
 interface FormData {
   type: "INCOME" | "EXPENSE"
@@ -43,6 +44,14 @@ interface FormData {
     | "MONTHLY"
     | "YEARLY"
     | undefined
+}
+
+interface ScannedDataProps {
+  amount: number
+  date: string
+  description: string
+  merchantName: string
+  category: string
 }
 
 export const AddTransactionForm = ({
@@ -104,6 +113,19 @@ export const AddTransactionForm = ({
     transactionFn(formData)
   }
 
+  const handleScanComplete = (scannedData: ScannedDataProps) => {
+    if (scannedData) {
+      setValue("amount", scannedData.amount.toString())
+      if (scannedData.description) {
+        setValue("description", scannedData.description)
+      }
+      if (scannedData.category) {
+        setValue("category", scannedData.category)
+      }
+      setValue("date", new Date(scannedData.date))
+    }
+  }
+
   useEffect(() => {
     if (transactionResult?.success && !transactionLoading) {
       toast.success("Transaction created successfully")
@@ -114,6 +136,8 @@ export const AddTransactionForm = ({
   return (
     <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
       {/* AI Receipt Scanner */}
+
+      <ReceiptScanner onScanComplete={handleScanComplete} />
 
       <div className="space-y-2">
         <label className="text-sm font-medium">Type</label>
