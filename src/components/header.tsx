@@ -3,15 +3,15 @@ import Link from "next/link"
 import { Button } from "./ui/button"
 import { LayoutDashboard, PenBox } from "lucide-react"
 import { checkUser } from "@/lib/check_user"
+import Logo from "./logo"
 
 export const Header = async () => {
   await checkUser()
   return (
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
       <nav className="container mx-auto p-4 flex items-center justify-between">
-        <Link href="/" className="text-3xl font-bold">
-          Rakam
-        </Link>
+        <Logo />
+        <Link href="/" className="text-3xl font-bold"></Link>
         <div className="flex items-center space-x-4">
           <SignedIn>
             <Link

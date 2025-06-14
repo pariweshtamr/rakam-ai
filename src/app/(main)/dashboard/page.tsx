@@ -7,6 +7,27 @@ import { getCurrentBudget } from "@/actions/budget"
 import { BudgetProgress } from "./_components/budget-progress"
 import { Suspense } from "react"
 import { DashboardOverview } from "./_components/dashboard-overview"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Dashboard - KharchaTrack | Your Financial Overview",
+  description:
+    "View your complete financial dashboard with real-time expense tracking, income summaries, and AI-generated insights. Monitor your spending patterns and financial health at a glance.",
+  keywords:
+    "financial dashboard, expense overview, income tracking, spending analytics, budget dashboard, financial summary",
+  openGraph: {
+    title: "Dashboard - KharchaTrack | Your Financial Overview",
+    description:
+      "View your complete financial dashboard with real-time expense tracking, income summaries, and AI-generated insights.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dashboard - KharchaTrack | Your Financial Overview",
+    description:
+      "View your complete financial dashboard with real-time expense tracking, income summaries, and AI-generated insights.",
+  },
+}
 
 const DashboardPage = async () => {
   const accounts = await getUserAccounts()

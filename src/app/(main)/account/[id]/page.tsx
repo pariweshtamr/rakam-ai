@@ -5,9 +5,28 @@ import { TransactionTable } from "../_components/transaction-table"
 import { BarLoader } from "react-spinners"
 import { AccountChart } from "../_components/account-chart"
 
+export const metadata = {
+  title: "Account - KharchaTrack",
+  description:
+    "Manage your KharchaTrack accounts for periodical insights with charts, transaction history, and more.",
+  keywords:
+    "account, account types, insights, charts, transaction history, financial preferences",
+  openGraph: {
+    title: "Account - KharchaTrack",
+    description:
+      "Manage your KharchaTrack accounts for periodical insights with charts, transaction history, and more.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Account - KharchaTrack",
+    description:
+      "Manage your KharchaTrack accounts for periodical insights with charts, transaction history, and more.",
+  },
+}
+
 interface AccountPageParams {
   id: string
-  // Add other properties as needed
 }
 
 const AccountPage = async ({

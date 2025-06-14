@@ -161,7 +161,7 @@ export const AddTransactionForm = ({
 
       {!editMode && <ReceiptScanner onScanComplete={handleScanComplete} />}
 
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <label className="text-sm font-medium">Type</label>
         <Select
           defaultValue={type}
@@ -238,7 +238,7 @@ export const AddTransactionForm = ({
         </div>
       </div>
 
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <label className="text-sm font-medium">Category</label>
         <Select
           defaultValue={getValues("category")}
@@ -263,7 +263,7 @@ export const AddTransactionForm = ({
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <label className="text-sm font-medium">Date</label>
 
         <Popover>
@@ -296,7 +296,7 @@ export const AddTransactionForm = ({
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <label className="text-sm font-medium">Description</label>
         <Input placeholder="Wnter description" {...register("description")} />
         {errors.description && (
@@ -322,7 +322,7 @@ export const AddTransactionForm = ({
       </div>
 
       {isRecurring && (
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
           <label className="text-sm font-medium">Recurring interval</label>
           <Select
             onValueChange={(value: RecurringInterval) =>
@@ -350,16 +350,16 @@ export const AddTransactionForm = ({
         </div>
       )}
 
-      <div className="flex gap-4 w-full">
+      <div className="flex flex-col-reverse md:flex-row gap-4 pt-4">
         <Button
           type="button"
-          className="w-1/2"
+          className="flex-1"
           variant={"outline"}
           onClick={() => router.back()}
         >
           Cancel
         </Button>
-        <Button type="submit" className="w-1/2" disabled={transactionLoading}>
+        <Button type="submit" className="flex-1" disabled={transactionLoading}>
           {transactionLoading ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />

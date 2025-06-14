@@ -2,6 +2,27 @@ import { getUserAccounts } from "@/actions/dashboard"
 import { defaultCategories } from "@/data/categories"
 import { AddTransactionForm } from "./_components/add-transaction-form"
 import { getTransaction } from "@/actions/transactions"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Add Transaction - KharchaTrack | Manual Entry & Receipt Scan",
+  description:
+    "Add new transactions manually or scan receipts with AI. Quickly log expenses and income to keep your financial tracking accurate and up-to-date.",
+  keywords:
+    "add transaction, manual entry, receipt scanning, expense logging, income tracking, financial data entry",
+  openGraph: {
+    title: "Add Transaction - KharchaTrack | Manual Entry & Receipt Scan",
+    description:
+      "Add new transactions manually or scan receipts with AI. Keep your financial tracking accurate and up-to-date.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Add Transaction - KharchaTrack | Manual Entry & Receipt Scan",
+    description:
+      "Add new transactions manually or scan receipts with AI. Keep your financial tracking accurate and up-to-date.",
+  },
+}
 
 interface Params {
   edit?: string
