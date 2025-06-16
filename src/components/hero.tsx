@@ -29,12 +29,13 @@ export const HeroSection = () => {
   return (
     <div className="pb-20 px-4">
       <div className="container mx-auto text-center">
-        <h1 className="text-5xl md:text-8xl lg:text-[105px] pb-6 gradient-title">
-          Manage Your Finances <br /> with Intelligence
+        <h1 className="text-5xl md:text-7xl lg:text-[105px] pb-6 gradient-title">
+          Control Your Money - <br /> the Smart Way
         </h1>
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          An AI-powered financial management platform that helps you track,
-          analyse, and optimise your spending with real-time insights.
+          An AI-powered app that keeps an eye on your spending, breaks it down
+          into easy visuals, and helps you make better financial choices in real
+          time.
         </p>
         <div className="">
           <Link href="/dashboard">

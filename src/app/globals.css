@@ -135,9 +135,8 @@
 } */
 
 .gradient-title {
-  @apply bg-gradient-to-br from-blue-600 to-purple-600 font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text;
+  @apply bg-gradient-to-br from-emerald-500 via-teal-500 to-indigo-600 font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text;
 }
-
 .hero-image-wrapper {
   perspective: 1000px;
 }

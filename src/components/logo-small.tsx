@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 
-const Logo = ({ className = "", style = {}, ...props }) => {
+const LogoSmall = ({ className = "", style = {}, ...props }) => {
   const [windowWidth, setWindowWidth] = useState(0)
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const Logo = ({ className = "", style = {}, ...props }) => {
       return {
         variant: "full",
         height: 52,
-        viewBox: "0 0 300 80",
+        viewBox: "0 0 300 0",
         showText: true,
         showTagline: true,
         fontSize: 24,
@@ -57,7 +57,7 @@ const Logo = ({ className = "", style = {}, ...props }) => {
       return {
         variant: "full",
         height: 56,
-        viewBox: "0 0 300 80",
+        viewBox: "0 0 80 80",
         showText: true,
         showTagline: true,
         fontSize: 26,
@@ -272,44 +272,8 @@ const Logo = ({ className = "", style = {}, ...props }) => {
       <rect x={36} y={50} width={3} height={10} fill="#10b981" rx={1} />
       <rect x={40} y={46} width={3} height={14} fill="#8b5cf6" rx={1} />
       <rect x={44} y={54} width={3} height={6} fill="#f59e0b" rx={1} />
-
-      {/* Brand text - conditionally rendered */}
-      {config.showText && (
-        <text
-          x={85}
-          y={45}
-          fontFamily="Arial, sans-serif"
-          fontSize={config.fontSize}
-          fontWeight="bold"
-          fill="#1e293b"
-        >
-          Kharcha
-          <tspan fill="#14b8a6">Track</tspan>
-        </text>
-      )}
-
-      {/* Tagline - conditionally rendered */}
-
-      <text
-        x={85}
-        y={60}
-        fontFamily="Arial, sans-serif"
-        fontSize={config.taglineFontSize}
-        fill="#64748b"
-      >
-        AI-Powered Expense Management
-      </text>
-
-      {/* Decorative elements - only show in full variant */}
-      {config.showTagline && (
-        <>
-          <circle cx={270} cy={20} r={2} fill="#10b981" opacity={0.6} />
-          <circle cx={280} cy={25} r={1.5} fill="#3b82f6" opacity={0.4} />
-          <circle cx={275} cy={15} r={1} fill="#f59e0b" opacity={0.5} />
-        </>
-      )}
     </svg>
   )
 }
 
-export default Logo
+export default LogoSmall
