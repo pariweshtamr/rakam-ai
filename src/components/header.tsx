@@ -10,8 +10,9 @@ export const Header = async () => {
   return (
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
       <nav className="container mx-auto p-4 flex items-center justify-between">
-        <Logo />
-        <Link href="/" className="text-3xl font-bold"></Link>
+        <Link href="/" className="text-3xl font-bold">
+          <Logo />
+        </Link>
         <div className="flex items-center space-x-4">
           <SignedIn>
             <Link
