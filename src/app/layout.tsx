@@ -19,9 +19,10 @@ export const metadata: Metadata = {
     description:
       "Track your finances effortlessly with AI-powered receipt scanning, automated insights, and visual expense charts.",
     type: "website",
+    url: process.env.DOMAIN_URL!,
     images: [
       {
-        url: "/kharchatrack.png",
+        url: `${process.env.DOMAIN_URL}/kharchatrack.png`,
         width: 800,
         height: 600,
         alt: "KharchaTrack Logo",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
       "Track your finances effortlessly with AI-powered receipt scanning, automated insights, and visual expense charts.",
     images: [
       {
-        url: "/kharchatrack.png",
+        url: `${process.env.DOMAIN_URL}/kharchatrack.png`,
         width: 800,
         height: 600,
         alt: "KharchaTrack Logo",
