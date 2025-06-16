@@ -19,12 +19,28 @@ export const metadata: Metadata = {
     description:
       "Track your finances effortlessly with AI-powered receipt scanning, automated insights, and visual expense charts.",
     type: "website",
+    images: [
+      {
+        url: "/kharchatrack.png",
+        width: 800,
+        height: 600,
+        alt: "KharchaTrack Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "KharchaTrack - AI-Powered Expense Management",
     description:
       "Track your finances effortlessly with AI-powered receipt scanning, automated insights, and visual expense charts.",
+    images: [
+      {
+        url: "/kharchatrack.png",
+        width: 800,
+        height: 600,
+        alt: "KharchaTrack Logo",
+      },
+    ],
   },
   robots: {
     index: true,
